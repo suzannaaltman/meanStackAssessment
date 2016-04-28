@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="heroApp">
+  <head>
+    <meta charset="utf-8">
+    <title>!Superheros!</title>
+    <script src="vendors/angular/angular.min.js"></script>
+    <script src="assets/scripts/client.min.js"></script>
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="views/styles.css" rel="stylesheet" />
+  </head>
+  <body class="container" ng-controller="HeroController">
+    <div class="jumbotron">
+      <h1>HERO TRACKER</h1>
+    </div>
+    <div id="form" class ="col-md-5">
+      <h4>Enter Hero Here:</h4>
+      <div>
+        <label>Alias:</label>
+        <input type="text" class="form-control" ng-model="hero.alias" aria-describedby="sizing-addon1"></input>
+        <br />
+        <label>First Name:</label>
+        <input type="text" class="form-control" ng-model="hero.first_name" aria-describedby="sizing-addon1"></input>
+        <br />
+        <label>Last Name:</label>
+        <input type="text" class="form-control" ng-model="hero.last_name" aria-describedby="sizing-addon1"></input>
+        <br />
+        <label>City:</label>
+        <input type="text" class="form-control" ng-model="hero.city" aria-describedby="sizing-addon1"></input>
+        <br />
+        <label>Power Name:</label>
+        <select ng-options="power_name for power_name in options" ng-model="hero.power_name" aria-describedby="sizing-addon1"></select>
+        <br />
+        <br />
+        <button ng-click="sendData()" class="btn btn-danger">Submit Hero</input>
+      </div>
+    </div>
+    <div id="list" class="col-md-5">
+      <h4>Your Heroes:</h4>
+      <div class="well" ng-repeat="hero in heroes">
+        Alias: {{hero.alias}} <br />
+        First Name: {{hero.first_name}} <br />
+        Last Name: {{hero.first_name}} <br />
+        City: {{hero.city}} <br />
+        Power Name: {{hero.power_name}} <br />
+        <button ng-click="removeHero(hero)">Delete Hero</button>
+      </div>
+    </div>
+
+  </body>
+</html>

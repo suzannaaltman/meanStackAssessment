@@ -1,0 +1,15 @@
+#form {
+  float: left;
+  margin: 0 3%;
+}
+
+#list {
+  margin-left: 3%;
+}
+
+.jumbotron {
+  background-color: darkred;
+  color: white;
+  text-shadow: 2px 2px black;
+  text-align: center;
+}

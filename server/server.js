@@ -15,7 +15,7 @@ app.use('/', index);
 app.use('/hero', hero);
 
 //MongoDB
-var mongoURI = 'mongodb://localhost/superheros';
+var mongoURI = 'mongodb://localhost/heroes';
 var MongoDB = mongoose.connect(mongoURI).connection;
 
 MongoDB.on('error', function(err){
